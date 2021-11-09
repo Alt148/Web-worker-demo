@@ -1,0 +1,11 @@
+<h2>Code running with no webworker</h2>
+<form (ngSubmit)="onSubmit()" #valueForm="ngForm">
+  <mat-form-field>
+    <mat-label>Enter value to calculate the fibonaci number</mat-label>
+    <input matInput name="value" type="text" placeholder="Number" [(ngModel)]="value" required>
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+  <button *ngIf="value" mat-button>Calculate</button>
+  <p *ngIf="fibResult">The result: {{ fibResult }}</p>
+  <p>Time: {{ time }} ms</p>
+</form>
